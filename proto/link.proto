@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package microlink;
+
+service LinkService {
+  rpc ShortenLink(ModifyLinkRequest) returns (ModifyLinkResponse);
+  rpc LengthenLink(ModifyLinkRequest) returns (ModifyLinkResponse);
+}
+
+message ModifyLinkRequest {
+  string actualLink = 1;
+}
+
+message ModifyLinkResponse {
+  string modifiedLink = 1;
+  string error = 2;
+}
